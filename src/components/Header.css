@@ -1,0 +1,60 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 2rem;
+  background: var(--forest);
+  color: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header__brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-header__nav button {
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 0.98rem;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header__nav button.is-active {
+  border-bottom-color: var(--gold);
+}
+
+.site-header__cart {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-header__badge {
+  background: var(--rust);
+  color: var(--cream);
+  border-radius: 999px;
+  padding: 0.05rem 0.55rem;
+  font-size: 0.82rem;
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

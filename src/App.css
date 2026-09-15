@@ -1,0 +1,56 @@
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-image: linear-gradient(
+      180deg,
+      rgba(20, 43, 32, 0.35) 0%,
+      rgba(20, 43, 32, 0.85) 100%
+    ),
+    url('https://images.unsplash.com/photo-1466692476868-9ee5a3a3e93b?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-page__overlay {
+  color: var(--cream);
+  padding: 3rem 2.5rem 4rem;
+  max-width: 560px;
+}
+
+.landing-page__eyebrow {
+  color: var(--gold);
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+
+.landing-page__title {
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.about-us {
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+  color: #ece7d8;
+}
+
+.landing-page__cta {
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--rust);
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.landing-page__cta:hover {
+  background: #8f5027;
+}
+
+@media (max-width: 600px) {
+  .landing-page__overlay {
+    padding: 2rem 1.3rem 3rem;
+  }
+}
