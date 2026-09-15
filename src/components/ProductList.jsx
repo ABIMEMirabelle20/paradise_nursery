@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, selectCartItems } from '../redux/CartSlice';
 import { plantsData } from '../data/plantsData';
-import PlantIcon from './PlantIcon';
+import PlantThumb from './PlantThumb';
 import Header from './Header';
 import './ProductList.css';
 
@@ -11,8 +11,8 @@ function ProductList({ onNavigate }) {
 
   const isInCart = (name) => cartItems.some((item) => item.name === name);
 
-  const handleAdd = (plant, category) => {
-    dispatch(addItem({ ...plant, category }));
+  const handleAdd = (plant, category, image) => {
+    dispatch(addItem({ ...plant, category, image }));
   };
 
   return (
@@ -33,14 +33,22 @@ function ProductList({ onNavigate }) {
               return (
                 <article className="product-card" key={plant.name}>
                   <div className="product-card__thumb">
-                    <PlantIcon color={plant.color} />
+                    <PlantThumb
+                      image={group.image}
+                      alt={plant.name}
+                      color={plant.color}
+                      size={110}
+                    />
                   </div>
                   <h3>{plant.name}</h3>
+                  <p className="product-card__description">
+                    {plant.description}
+                  </p>
                   <p className="product-card__price">{plant.price} €</p>
                   <button
                     className="product-card__button"
                     disabled={added}
-                    onClick={() => handleAdd(plant, group.category)}
+                    onClick={() => handleAdd(plant, group.category, group.image)}
                   >
                     {added ? 'Ajouté ✓' : 'Ajouter au panier'}
                   </button>

@@ -47,10 +47,19 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem 0 0.8rem;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .product-card h3 {
   font-size: 1.05rem;
+}
+
+.product-card__description {
+  font-size: 0.85rem;
+  color: #6b6455;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .product-card__price {

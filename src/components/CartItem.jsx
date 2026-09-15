@@ -6,7 +6,7 @@ import {
   selectCartItems,
   selectTotalCost,
 } from '../redux/CartSlice';
-import PlantIcon from './PlantIcon';
+import PlantThumb from './PlantThumb';
 import Header from './Header';
 import './CartItem.css';
 
@@ -35,7 +35,12 @@ function CartItem({ onNavigate }) {
             {items.map((item) => (
               <li className="cart-list__row" key={item.name}>
                 <div className="cart-list__thumb">
-                  <PlantIcon color={item.color} size={48} />
+                  <PlantThumb
+                    image={item.image}
+                    alt={item.name}
+                    color={item.color}
+                    size={56}
+                  />
                 </div>
                 <div className="cart-list__info">
                   <h3>{item.name}</h3>
